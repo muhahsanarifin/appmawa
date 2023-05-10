@@ -257,7 +257,7 @@ export const RegulerInput: React.FC = () => {
         {status?.isFulfilled && (
           <GoToResultButton
             initial="Go to Result"
-            onClick={() => document.location.replace("/result")}
+            onClick={() => window.location.replace("/result")}
             onStyle="result-button"
           />
         )}
