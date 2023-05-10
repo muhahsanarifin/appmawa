@@ -1,4 +1,5 @@
 import JsonViewerComponent from "../components/JsonViewer";
+import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { RootState } from "../redux/store";
 import { useDispatch } from "react-redux";
@@ -13,6 +14,7 @@ import {
 import styles from "../styles/result.module.css";
 
 const Result = () => {
+  const navigate = useNavigate()
   const useAppDispatch: () => AppDispatch = useDispatch;
   const dispatch = useAppDispatch();
   const status = useSelector((state: RootState) => state.nilai);
@@ -22,7 +24,7 @@ const Result = () => {
         <nav className={styles["nav"]}>
           <BackButton
             initial="Back to home"
-            onClick={() => window.location.replace("/")}
+            onClick={() => navigate("/")}
             onStyle="back-button"
           />
         </nav>
@@ -36,11 +38,13 @@ const Result = () => {
           <JsonViewerComponent />
         </section>
         <section className={styles["delete-section"]}>
-          {status?.isFulfilled && <DeleteButton
-            initial="Hapus data JSON"
-            onStyle="delete-button"
-            onClick={() => dispatch(nilaiAction.hapus())}
-          />}
+          {status?.isFulfilled && (
+            <DeleteButton
+              initial="Hapus data JSON"
+              onStyle="delete-button"
+              onClick={() => dispatch(nilaiAction.hapus())}
+            />
+          )}
         </section>
       </main>
     </>
