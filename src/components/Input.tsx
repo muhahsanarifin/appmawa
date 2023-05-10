@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Icon } from "@iconify/react";
 import { useSelector } from "react-redux";
 import { RootState } from "../redux/store";
+import { useNavigate } from "react-router-dom";
 
 import jumlah_mahasiswa from "../utils/data";
 
@@ -9,6 +10,7 @@ import styles from "../styles/Input.module.css";
 import { SaveButton, RegulerButton as GoToResultButton } from "./Button";
 
 export const RegulerInput: React.FC = () => {
+  const navigate = useNavigate();
   const status = useSelector((state: RootState) => state.nilai);
 
   const [penilianPertama, setPenilianPertama] = useState<object>({
@@ -257,7 +259,7 @@ export const RegulerInput: React.FC = () => {
         {status?.isFulfilled && (
           <GoToResultButton
             initial="Go to Result"
-            onClick={() => window.location.replace("/result")}
+            onClick={() => navigate("/hasil/nilai")}
             onStyle="result-button"
           />
         )}
