@@ -12,7 +12,7 @@ const router = [
     ),
   },
   {
-    path: "result",
+    path: "/result",
     element: (
       <Title onTitle="Result">
         <Result />
