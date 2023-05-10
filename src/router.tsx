@@ -14,7 +14,7 @@ const router = createBrowserRouter([
     ),
   },
   {
-    path: "result",
+    path: "/hasil/nilai",
     element: (
       <Title onTitle="Result">
         <Result />
