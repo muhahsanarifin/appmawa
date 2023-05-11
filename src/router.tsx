@@ -1,5 +1,6 @@
 import Home from "./pages/home";
 import Result from "./pages/result";
+import Error from "./pages/error";
 import Title from "./components/TitleBar";
 import { PrivateRoute } from "./helpers/handleRoutes";
 
@@ -18,10 +19,18 @@ const router = createBrowserRouter([
     path: "/hasil/nilai",
     element: (
       <PrivateRoute>
-        <Title onTitle="Result">
+        <Title onTitle="Hasil">
           <Result />
         </Title>
       </PrivateRoute>
+    ),
+  },
+  {
+    path: "*",
+    element: (
+      <Title onTitle="Error">
+        <Error />
+      </Title>
     ),
   },
 ]);
