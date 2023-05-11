@@ -8,6 +8,7 @@ const initialState: NilaiState = {
   data: null,
   isFulfilled: false,
   msg: null,
+  status_access: false,
 };
 
 export const nilaiSlice = createSlice({
@@ -20,6 +21,7 @@ export const nilaiSlice = createSlice({
         data: action.payload,
         isFulfilled: true,
         msg: "Data sukses disimpan.",
+        status_access: true,
       };
     },
     hapus: (prevState) => {
@@ -28,6 +30,7 @@ export const nilaiSlice = createSlice({
         data: null,
         isFulfilled: false,
         msg: "Data sukses dihapus.",
+        status_access: false,
       };
     },
   },
