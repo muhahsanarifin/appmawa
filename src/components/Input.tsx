@@ -258,7 +258,7 @@ export const RegulerInput: React.FC = () => {
       <div className={styles["button-section"]}>
         {status?.isFulfilled && (
           <GoToResultButton
-            initial="Go to Result"
+            initial="Tampilkan Hasil"
             onClick={() => navigate("/hasil/nilai")}
             onStyle="result-button"
           />
