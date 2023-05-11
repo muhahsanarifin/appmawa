@@ -23,7 +23,7 @@ const Result = () => {
       <main className={styles["main"]}>
         <nav className={styles["nav"]}>
           <BackButton
-            initial="Back to home"
+            initial="ke halaman utama"
             onClick={() => navigate("/")}
             onStyle="back-button"
           />
